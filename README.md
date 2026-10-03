@@ -1,7 +1,6 @@
 # pbo2-2410010589
 
-================================================================================================================================================
-
+==========================================================================================================================================
 Jawaban Praktikum 6 Pertemuan 2
 
 Eksperimen 1: Error Koleksi is abstract; cannot be instantiated karena kelas abstract tidak bisa dibuat objeknya dengan new.
@@ -12,8 +11,7 @@ Eksperimen 3: Error java.lang.IllegalArgumentException: Judul tidak boleh kosong
 
 Eksperimen 4: Melanggar Enkapsulasi karena mengubah status langsung dari luar tanpa lewat method pinjam()/kembalikan().
 
-================================================================================================================================================
-
+==========================================================================================================================================
 Jawaban G. Pertanyaan Refleksi Pertemuan 3
 
 1. Perbedaan Container & Component: Top-level container: Jendela utama aplikasi yang memiliki bingkai dan judul (Contoh: JFrame).
