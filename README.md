@@ -64,10 +64,6 @@ Prinsip konsistensi dan urutan yang wajar juga terpenuhi, kalau Anda ingin menja
 - Konsistensi: Insets label selalu 6, 0, 6, 12 dan isian selalu 4, 0, 4, 0.
 - Urutan yang wajar: tombol Daftar ada di kanan bawah.
 
-Semua jawaban ini sudah tercatat di `README.md` bagian 7. Untuk nomor 5, pastikan bukti tangkapan layarnya memang menunjukkan hal yang Anda tulis.
-
-
-
 Foto sketsa form dan tabel rancangan Pertemuan 4
 1. Sketsa FormAnggotaPerpustakaan
 +-----------------------------------------------+
