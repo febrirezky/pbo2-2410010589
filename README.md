@@ -29,3 +29,48 @@ Jawaban G. Pertanyaan Refleksi Pertemuan 3
 
 5. Alasan FlatLightLaf.setup() dipanggil di awal:   Agar tema FlatLaf mendaftar ke sistem Swing sebelum komponen dibuat,
                                                     sehingga tampilan seluruh komponen langsung menggunakan gaya FlatLaf.
+
+====================================================================================
+Foto sketsa form dan tabel rancangan Pertemuan 4
+1. Sketsa FormAnggotaPerpustakaan
++-----------------------------------------------+
+| JFrame : BorderLayout                         |
+| +-------------------------------------------+ |
+| | NORTH  headerPanel : BoxLayout, Y Axis    | |
+| |   judulLabel / keteranganLabel            | |
+| +-------------------------------------------+ |
+| | CENTER isiPanel : BorderLayout            | |
+| |  +-------------------------------------+  | |
+| |  | NORTH formPanel : GridBagLayout     |  | |
+| |  |  Data Anggota                       |  | |
+| |  |  NPM | [____________]               |  | |
+| |  |  Nama lengkap | [____________]      |  | |
+| |  |  Program studi | [Combo Box v]      |  | |
+| |  |  Jenis anggota | (o)Mhs ( )Dosen ( )Umum |
+| |  |  Kontak                             |  | |
+| |  |  Email | [____]   Nomor HP | [____] |  | |
+| |  |  Alamat | [Text Area]               |  | |
+| |  |  [ ] Setuju dengan tata tertib      |  | |
+| |  +-------------------------------------+  | |
+| +-------------------------------------------+ |
+| | SOUTH  tombolPanel : FlowLayout, Right    | |
+| |                        [Batal] [Daftar]   | |
+| +-------------------------------------------+ |
++-----------------------------------------------+
+   
+5. Saran dari teman (Tahap 4)
+Jawaban eksperimen Praktikum 2 dan Praktikum 4, serta saran dari teman pada Tahap 4
+Diisi oleh teman yang menilai:
+
+| No | Pemeriksaan | Ya / Belum |
+| 1 | Label singkat, jelas, dan sejajar | Ya |
+| 2 | Isian dikelompokkan dengan judul bagian | Ya |
+| 3 | Placeholder dipakai untuk isian yang punya format | Ya |
+| 4 | Komponen sesuai jenis data | Ya |
+| 5 | Tombol utama menonjol dan di kanan bawah | Ya |
+| 6 | Jarak antar komponen konsisten | Ya |
+| 7 | Rapi saat dilebarkan dan ditinggikan | Ya |
+| 8 | JFrame Form dan layout manager, bukan Null/Absolute Layout | Ya |
+
+6. Deklarasi penggunaan AI
+Saya menggunakan Claude (Anthropic) untuk: (1) menyusun draf tabel rancangan dan sketsa acuan. Hasilnya saya buka di NetBeans, jalankan, dan periksa sendiri; pengamatan pada eksperimen yang berasal dari percobaan saya.
