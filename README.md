@@ -31,6 +31,43 @@ Jawaban G. Pertanyaan Refleksi Pertemuan 3
                                                     sehingga tampilan seluruh komponen langsung menggunakan gaya FlatLaf.
 
 ====================================================================================
+1. Mengapa Null Layout dan Absolute Layout sebaiknya dihindari?
+Keduanya memakai posisi dan ukuran piksel yang tetap, misalnya `setBounds(110, 20, 200, 25)`. Akibatnya:
+- Isian tidak menyesuaikan saat jendela dilebarkan dan tetap 200 piksel.
+- Teks bisa terpotong karena ukuran huruf dan skala layar berbeda di setiap laptop.
+- Absolute Layout membutuhkan library tambahan NetBeans, sehingga aplikasi sulit dijalankan di komputer lain.
+
+Layout manager menghitung posisi dan ukuran komponen secara otomatis mengikuti ukuran jendela.
+
+2. Perbedaan perilaku FlowLayout dan GridLayout saat jendela dilebarkan
+- FlowLayout menyusun komponen berderet dari kiri ke kanan dengan ukuran aslinya. Komponen tidak ditarik melebar, dan yang tidak muat pindah ke baris berikutnya. Saat jendela dilebarkan, tombol tetap berukuran sama dan hanya muncul ruang kosong. Saat dikecilkan, tombol pindah baris.
+- GridLayout membagi ukuran panel rata ke semua sel. Saat jendela dilebarkan, semua sel dan komponen di dalamnya ikut melebar dengan ukuran sama, dan jumlah baris dan kolom tetap.
+
+Karena GridLayout membagi kolom sama besar, kolom label ikut melebar dan isian terdorong jauh ke kanan. Itu sebabnya GridLayout tidak cocok untuk form berisi label dan isian.
+
+3. Fungsi Weight X dan Fill pada constraint GridBagLayout
+- Weight X menentukan kolom mana yang mendapat sisa lebar saat jendela dilebarkan. Di form ini, label memakai 0.0 sehingga lebarnya tetap, dan isian memakai 1.0 sehingga kolom isian mengambil semua sisa lebar.
+- Fill menentukan apakah komponen memenuhi sel yang ditempatinya. Fill Horizontal membuat isian memenuhi lebar kolomnya.
+
+Kuncinya adalah memakai keduanya bersama pada kolom isian. Weight X 1.0 membuat kolomnya melebar, dan Fill Horizontal membuat isiannya ikut melebar. Hasilnya label tetap dan isian melebar.
+
+4. Mengapa `formPanel` dibungkus `isiPanel` dan diletakkan di North?
+Jika `formPanel` langsung diletakkan di Center, ia ditarik mengisi seluruh tinggi saat jendela ditinggikan. Karena semua baris form tidak punya Weight Y, baris-barisnya berkumpul di tengah dan muncul ruang kosong di atas dan bawah.
+
+Dengan `isiPanel` (BorderLayout) sebagai pembungkus dan `formPanel` di North, `formPanel` hanya setinggi isinya. Baris form tetap di atas, dan ruang tambahan menjadi ruang kosong di bawah.
+
+5. Dua prinsip desain di Form Anggota Perpustakaan dan buktinya
+- Keselarasan. Semua label berada di kolom 0 dengan Anchor West, dan semua isian di kolom 1, sehingga membentuk garis lurus dari atas ke bawah. Bukti: tangkapan layar ukuran awal dan saat dilebarkan, label tetap sejajar di kiri dan isian sejajar dengan tepi yang sama.
+- Kedekatan. Isian yang berkaitan dikelompokkan dengan judul bagian, yaitu Data Anggota (NPM, Nama lengkap, Program studi, Jenis anggota) dan Kontak (Email, Nomor HP, Alamat). Ada jarak atas 16 piksel sebelum judul Kontak. Bukti: tangkapan layar form yang menampilkan dua kelompok terpisah.
+
+Prinsip konsistensi dan urutan yang wajar juga terpenuhi, kalau Anda ingin menjadikannya cadangan jawaban:
+- Konsistensi: Insets label selalu 6, 0, 6, 12 dan isian selalu 4, 0, 4, 0.
+- Urutan yang wajar: tombol Daftar ada di kanan bawah.
+
+Semua jawaban ini sudah tercatat di `README.md` bagian 7. Untuk nomor 5, pastikan bukti tangkapan layarnya memang menunjukkan hal yang Anda tulis.
+
+
+
 Foto sketsa form dan tabel rancangan Pertemuan 4
 1. Sketsa FormAnggotaPerpustakaan
 +-----------------------------------------------+
