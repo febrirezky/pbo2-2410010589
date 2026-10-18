@@ -4,7 +4,7 @@ package id.ac.uniska.pbo2.p01;
  *
  * @author febri
  */
-public class KartuaMahasiswa {
+public class KartuMahasiswa {
     public static void main(String[] args){
     System.out.println("=================================");
     System.out.println("      Kartu Mahasiwa PBO2      ");
