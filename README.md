@@ -127,8 +127,8 @@ Peta event FormAnggotaPerpustakaan
 #4. Jawaban eksperimen (KalkulatorSederhana)
 1. Lambda dan event handler pada `kaliButton`: pesan "kali" tercetak **dua kali** per klik. Setiap `addActionListener` menambah satu listener baru, dan semua listener yang terdaftar dijalankan. Satu tombol sebaiknya memakai satu cara agar aksinya tidak berjalan ganda (misalnya menyimpan data dua kali) dan kode lebih mudah ditelusuri.
 2. Menambah tombol %:
-   - *Tab Design:* seret Button ke `operatorPanel`, beri nama `sisaButton` dengan text `%`, lalu ubah Columns `operatorPanel` menjadi 5.
-   - *Tab Source:* buat event actionPerformed lewat Events yang memanggil `hitung('%');`, tambahkan `case '%' -> a % b;` pada `switch` di `hitung()`, dan ubah pemeriksaan nol menjadi `(operator == '/' || operator == '%') && b == 0`. Tanpa `case '%'`, tombol ini jatuh ke `default` dan melakukan pembagian.
+   - Tab Design: seret Button ke `operatorPanel`, beri nama `sisaButton` dengan text `%`, lalu ubah Columns `operatorPanel` menjadi 5.
+   - Tab Source: buat event actionPerformed lewat Events yang memanggil `hitung('%');`, tambahkan `case '%' -> a % b;` pada `switch` di `hitung()`, dan ubah pemeriksaan nol menjadi `(operator == '/' || operator == '%') && b == 0`. Tanpa `case '%'`, tombol ini jatuh ke `default` dan melakukan pembagian.
 3. Kursor langsung di isian pertama: `hapus()` memanggil `angka1Field.requestFocusInWindow()`. Saat tombol Hapus diklik, fokus pindah ke tombol, sehingga kode ini mengembalikannya ke isian pertama agar pengguna bisa langsung mengetik angka baru.
 
 Deklarasi penggunaan AI
