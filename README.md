@@ -31,6 +31,7 @@ Jawaban G. Pertanyaan Refleksi Pertemuan 3
                                                     sehingga tampilan seluruh komponen langsung menggunakan gaya FlatLaf.
 
 ====================================================================================
+jawaban pertemuan 4
 1. Mengapa Null Layout dan Absolute Layout sebaiknya dihindari?
 Keduanya memakai posisi dan ukuran piksel yang tetap, misalnya `setBounds(110, 20, 200, 25)`. Akibatnya:
 - Isian tidak menyesuaikan saat jendela dilebarkan dan tetap 200 piksel.
@@ -107,3 +108,28 @@ Diisi oleh teman yang menilai:
 
 6. Deklarasi penggunaan AI
 Saya menggunakan Claude (Anthropic) untuk: (1) menyusun draf tabel rancangan dan sketsa acuan. Hasilnya saya buka di NetBeans, jalankan, dan periksa sendiri; pengamatan pada eksperimen yang berasal dari percobaan saya.
+====================================================================================
+Jawaban pertemuan 5
+
+Peta event FormAnggotaPerpustakaan
+| Komponen                   | Menu Events               | Aksi | Ya |
+| `setujuCheck`              | Item: itemStateChanged    | Tombol Daftar hanya aktif jika dicentang | Ya |
+| `batalButton`              | Action: actionPerformed   | Kosongkan semua isian dan kembalikan fokus ke NPM | Ya |
+| `daftarButton`             | Action: actionPerformed   | Tampilkan ringkasan data dengan JOptionPane |
+| `npmField`                 | Key: keyReleased          | Label kecil menampilkan jumlah digit, misalnya "8 dari 10 digit" | Ya |
+| Form (JFrame di Navigator) | Window: windowClosing     | Minta konfirmasi sebelum aplikasi ditutup | Ya |
+
+#3. Jawaban eksperimen (KonversiSuhu)
+1. Tanpa pemeriksaan `SELECTED`: pesan "item berubah" tercetak dua kali setiap pilihan diganti, sekali untuk pilihan lama (DESELECTED) dan sekali untuk pilihan baru (SELECTED). Akibatnya `konversi()` ikut berjalan dua kali.
+2. keyPressed, hasil terlambat satu karakter: `keyPressed` dipicu saat tombol baru ditekan, sebelum huruf masuk ke isian. Saat `konversi()` membaca `getText()`, isi isian masih nilai lama. `keyReleased` dipicu saat tombol dilepas, ketika huruf sudah masuk, sehingga hasil selalu sesuai isian terbaru.
+3. Tanpa `try` dan `catch`: saat huruf diketik, `Double.parseDouble` melempar `NumberFormatException` dan jendela Output menampilkan pesan error (`java.lang.NumberFormatException: For input string: "..."`) beserta stack trace. Hasil di `hasilLabel` tidak diperbarui, dan pesan error muncul lagi pada setiap ketikan berikutnya.
+
+#4. Jawaban eksperimen (KalkulatorSederhana)
+1. Lambda dan event handler pada `kaliButton`: pesan "kali" tercetak **dua kali** per klik. Setiap `addActionListener` menambah satu listener baru, dan semua listener yang terdaftar dijalankan. Satu tombol sebaiknya memakai satu cara agar aksinya tidak berjalan ganda (misalnya menyimpan data dua kali) dan kode lebih mudah ditelusuri.
+2. Menambah tombol %:
+   - *Tab Design:* seret Button ke `operatorPanel`, beri nama `sisaButton` dengan text `%`, lalu ubah Columns `operatorPanel` menjadi 5.
+   - *Tab Source:* buat event actionPerformed lewat Events yang memanggil `hitung('%');`, tambahkan `case '%' -> a % b;` pada `switch` di `hitung()`, dan ubah pemeriksaan nol menjadi `(operator == '/' || operator == '%') && b == 0`. Tanpa `case '%'`, tombol ini jatuh ke `default` dan melakukan pembagian.
+3. Kursor langsung di isian pertama: `hapus()` memanggil `angka1Field.requestFocusInWindow()`. Saat tombol Hapus diklik, fokus pindah ke tombol, sehingga kode ini mengembalikannya ke isian pertama agar pengguna bisa langsung mengetik angka baru.
+
+Deklarasi penggunaan AI
+Saya menggunakan Claude (Anthropic) untuk menjelaskan modul atau mengkoreksi ada kodingannya yang salah, memeriksa kode hasil yg ada di netbeans.
