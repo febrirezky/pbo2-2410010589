@@ -16,4 +16,11 @@ Nama / NPM : Febriawan Rezky
 | 6 | Atribut `private KontakTableModel model;` lalu `model = new KontakTableModel();` setelah `initComponents()`. Pesan error apa yang muncul dan mengapa? | Aplikasi gagal dibuka dengan `java.lang.IllegalArgumentException: Cannot set a null TableModel`. `initComponents()` dipanggil di awal konstruktor dan menjalankan `kontakTable.setModel(model);`, padahal `model` masih `null` karena baru dibuat setelahnya. |
 
 ### 3. Video demo
-Tautan video demo mini proyek (maks. 3 menit): <video controls src="Video Demo Mini Proyek.mp4" title="Demo mini proyek"></video>
+Tautan video demo mini proyek (maks. 3 menit):
+
+
+
+
+https://github.com/user-attachments/assets/bc0cdee8-f43d-4373-806c-c69cbd54cc64
+
+
